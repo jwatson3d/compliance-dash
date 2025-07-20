@@ -10,55 +10,26 @@
 ## Table of Contents
 
 - [Overview](#overview)
-- [Features](#features)
-- [Architecture](#architecture)
-- [Technology Stack](#technology-stack)
-- [Prerequisites](#prerequisites)
-- [Quick Start](#quick-start)
+- [Architecture & Stack](#architecture--stack)
+- [Getting Started](#getting-started)
 - [Development](#development)
-- [Testing](#testing)
 - [Deployment](#deployment)
 - [Configuration](#configuration)
-- [API Documentation](#api-documentation)
 - [Project Structure](#project-structure)
 - [Contributing](#contributing)
-- [Troubleshooting](#troubleshooting)
-- [License](#license)
 - [Support](#support)
 
 ## Overview
 
-The Compliance Dashboard is a full-stack application designed to streamline compliance monitoring and management across cloud infrastructure. It provides a user-friendly interface for tracking compliance status, managing policies, and generating reports.
+A full-stack application for streamlined compliance monitoring and management across cloud infrastructure, providing real-time tracking, policy management, and automated reporting.
 
-### Key Benefits
-- 📊 **Real-time Monitoring**: Track compliance status across your infrastructure
-- 🔒 **Security First**: Built with security best practices and vulnerability scanning
-- 🚀 **Cloud Native**: Designed for containerized deployment with auto-scaling
-- 🔄 **CI/CD Ready**: Integrated with automated testing and deployment pipelines
-- 💰 **Cost Optimized**: Infrastructure cost estimation with Infracost integration
+**Key Features:**
 
-## Features
-
-### Frontend
-- ⚛️ **React 19.x** with TypeScript support
-- 🎨 **Material-UI (MUI)** for consistent design system
-- 📊 **Chart.js** for data visualization
-- 🔐 **Authentication** and role-based access control
-- 📱 **Responsive Design** for mobile and desktop
-
-### Backend
-- 🟢 **Node.js 20.x** with Express framework
-- 🔒 **JWT Authentication** with secure session management
-- 🗄️ **Database Integration** with Prisma ORM
-- ☁️ **AWS Integration** for cloud resource monitoring
-- 🤖 **OpenAI Integration** for intelligent compliance insights
-
-### Infrastructure
-- 🏗️ **Terraform** for Infrastructure as Code (IaC)
-- 🐳 **Docker** containerization with multi-stage builds
-- 🔧 **AWS ECR** for container registry
-- 📊 **Infracost** for cost estimation
-- 🔄 **Automated CI/CD** pipeline ready
+- 📊 Real-time compliance monitoring
+- 🔒 Security-first design with vulnerability scanning
+- 🚀 Cloud-native containerized architecture
+- 🔄 CI/CD pipeline integration
+- 💰 Infrastructure cost optimization
 
 ## Architecture
 
@@ -158,6 +129,7 @@ Before you begin, ensure you have the following installed:
 ### Environment Setup
 
 1. **Clone and setup:**
+
    ```bash
    git clone <repository-url>
    cd compliance-dash
@@ -165,6 +137,7 @@ Before you begin, ensure you have the following installed:
    ```
 
 2. **Configure environment variables:**
+
    ```bash
    # Backend configuration
    cp backend/.env.example backend/.env
@@ -174,6 +147,7 @@ Before you begin, ensure you have the following installed:
    ```
 
 3. **Start development servers:**
+
    ```bash
    make dev  # Starts both frontend and backend
    ```
@@ -187,6 +161,7 @@ make help
 ```
 
 **Common development tasks:**
+
 ```bash
 make install           # Install all dependencies
 make dev              # Start development servers
@@ -197,6 +172,7 @@ make clean            # Clean build artifacts
 ```
 
 **Docker commands:**
+
 ```bash
 make docker-build     # Build Docker images
 make docker-up        # Start with Docker Compose
@@ -205,6 +181,7 @@ make docker-down      # Stop containers
 ```
 
 **Infrastructure commands:**
+
 ```bash
 make tf-init          # Initialize Terraform
 make tf-plan          # Preview infrastructure changes
@@ -288,6 +265,7 @@ make rebuild-containers  # Increments version and rebuilds
 ### Environment Variables
 
 #### Backend Configuration (`.env`)
+
 ```bash
 # Database
 DATABASE_URL="postgresql://username:password@localhost:5432/compliance_db"
@@ -304,6 +282,7 @@ JWT_SECRET="your-jwt-secret"
 ```
 
 #### Frontend Configuration (`.env`)
+
 ```bash
 REACT_APP_API_URL=http://localhost:4000
 REACT_APP_ENVIRONMENT=development
@@ -321,12 +300,14 @@ environment = "dev"
 ## API Documentation
 
 ### Base URL
+
 - Development: `http://localhost:4000`
 - Production: `https://api.compliance-dash.com`
 
 ### Authentication
 
 All API requests require a valid JWT token in the Authorization header:
+
 ```
 Authorization: Bearer <token>
 ```
@@ -389,20 +370,24 @@ We welcome contributions! Please follow these guidelines:
 
 1. **Fork the repository**
 2. **Create a feature branch**
+
    ```bash
    git checkout -b feature/your-feature-name
    ```
 3. **Make your changes**
 4. **Run tests and linting**
+
    ```bash
    make test
    make lint
    ```
 5. **Commit your changes**
+
    ```bash
    git commit -m "feat: add your feature description"
    ```
 6. **Push to your fork**
+
    ```bash
    git push origin feature/your-feature-name
    ```
@@ -419,11 +404,13 @@ We welcome contributions! Please follow these guidelines:
 ### Commit Messages
 
 Use [Conventional Commits](https://www.conventionalcommits.org/) format:
+
 - `feat:` for new features
 - `fix:` for bug fixes
 - `docs:` for documentation changes
 - `test:` for testing changes
 - `refactor:` for code refactoring
+- `chore:` maintenance tasks, dependency updates, or configuration changes
 
 ## Troubleshooting
 
@@ -432,6 +419,7 @@ Use [Conventional Commits](https://www.conventionalcommits.org/) format:
 #### Docker Issues
 
 **Problem**: "Cannot connect to the Docker daemon"
+
 ```bash
 # Solution: Start Docker service
 sudo systemctl start docker  # Linux
@@ -439,6 +427,7 @@ sudo systemctl start docker  # Linux
 ```
 
 **Problem**: Port already in use
+
 ```bash
 # Solution: Check what's using the port
 lsof -i :3000  # or :4000
@@ -448,6 +437,7 @@ lsof -i :3000  # or :4000
 #### Terraform Issues
 
 **Problem**: "terraform command not found"
+
 ```bash
 # Solution: Install Terraform or add to PATH
 brew install terraform  # macOS
@@ -455,6 +445,7 @@ brew install terraform  # macOS
 ```
 
 **Problem**: AWS credentials not configured
+
 ```bash
 # Solution: Configure AWS CLI
 aws configure
@@ -466,12 +457,14 @@ export AWS_SECRET_ACCESS_KEY=your-secret
 #### Node.js Issues
 
 **Problem**: Node version mismatch
+
 ```bash
 # Solution: Use Node Version Manager
 nvm use 20  # or the required version
 ```
 
 **Problem**: npm install failures
+
 ```bash
 # Solution: Clear npm cache and reinstall
 npm cache clean --force
@@ -492,6 +485,7 @@ npm install
 ### Debug Mode
 
 Enable debug logging:
+
 ```bash
 # Backend
 export DEBUG=compliance-dash:*

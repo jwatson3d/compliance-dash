@@ -1,7 +1,7 @@
 variable "aws_region" {
   description = "AWS region for ECR repositories"
   type        = string
-  default     = "us-east-1"
+  default     = "us-east-2"
 
   validation {
     condition     = can(regex("^[a-z0-9-]+$", var.aws_region))
