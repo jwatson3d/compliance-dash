@@ -217,7 +217,12 @@ tf-validate: ## Validate Terraform configuration
 .PHONY: tf-format
 tf-format: ## Format Terraform files
 	@echo "$(GREEN)Formatting Terraform files...$(NC)"
-	cd $(INFRA_DIR) && terraform fmt -recursive
+	cd $(INFRA_DIR) && terraform fmt
+
+.PHONY: tf-lint
+tf-lint: ## Lint Terraform files with tflint
+	@echo "$(GREEN)Linting Terraform files...$(NC)"
+	cd $(INFRA_DIR) && tflint
 
 .PHONY: tf-format-check
 tf-format-check: ## Check Terraform file formatting

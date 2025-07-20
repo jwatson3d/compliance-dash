@@ -2,7 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Node.js Version](https://img.shields.io/badge/node-%3E%3D%2020.x-brightgreen)](https://nodejs.org/)
-[![Terraform Version](https://img.shields.io/badge/terraform-%3E%3D%201.10-623ce4)](https://terraform.io/)
+[![Terraform Version](https://img.shields.io/badge/terraform-%3E%3D%201.12-623ce4)](https://terraform.io/)
 [![Docker](https://img.shields.io/badge/docker-%3E%3D%2020.x-0db7ed.svg)](https://www.docker.com/)
 
 > A modern, containerized compliance management dashboard for monitoring and managing infrastructure compliance standards.
@@ -74,7 +74,7 @@ graph TB
 | | Express | 5.x | Web Framework |
 | | Prisma | 6.x | Database ORM |
 | | TypeScript | 5.x | Type Safety |
-| **Infrastructure** | Terraform | 1.10+ | Infrastructure as Code |
+| **Infrastructure** | Terraform | 1.12+ | Infrastructure as Code |
 | | Docker | 20.x+ | Containerization |
 | | AWS ECR | - | Container Registry |
 | **DevOps** | Make | - | Task Automation |
@@ -88,7 +88,7 @@ Before you begin, ensure you have the following installed:
 - **npm**: v9.x or later (comes with Node.js)
 - **Docker**: v20.x or later ([Download](https://www.docker.com/get-started))
 - **Docker Compose**: v2.x or later
-- **Terraform**: v1.10 or later ([Download](https://terraform.io/downloads))
+- **Terraform**: v1.12 or later ([Download](https://terraform.io/downloads))
 - **AWS CLI**: v2.x ([Installation Guide](https://aws.amazon.com/cli/))
 - **Infracost**: v0.10.x ([Installation Guide](https://www.infracost.io/docs/))
 - **Make**: Available on most Unix systems
